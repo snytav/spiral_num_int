@@ -1,3 +1,5 @@
+import numpy as np
+
 # https://docs.sympy.org/latest/guides/solving/solve-ode.html#numerically-solve-an-ode-in-scipy
 
 from sympy import symbols, lambdify
@@ -29,12 +31,12 @@ solution = scipy.integrate.solve_ivp(f, (0, 10), y0, t_eval=t_eval, args=k_vals)
 # Extract the y (concentration) values from SciPy solution result
 y = solution.y
 # Plot the result graphically using matplotlib
-plt.plot(t_eval, y.T) 
+plt.plot(t_eval, y.T)
 # Add title, legend, and axis labels to the plot
-plt.title('Chemical Kinetics') 
-plt.legend(['NO', 'Br$_2$', 'NOBr'], shadow=True) 
-plt.xlabel('time') 
-plt.ylabel('concentration') 
+plt.title('Chemical Kinetics')
+plt.legend(['NO', 'Br$_2$', 'NOBr'], shadow=True)
+plt.xlabel('time')
+plt.ylabel('concentration')
 # Finally, display the annotated plot
 plt.show()
 qq = 0
